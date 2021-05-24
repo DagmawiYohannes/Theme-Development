@@ -9,53 +9,60 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package RadTheme
+ * @package moonsight
  */
 
-
- 
- 
 get_header();
 ?>
+<div class="container-fluid" id="cont">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-7">
 
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
 
-	<main id="primary" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
 				<?php
-			endif;
+				if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+					if ( is_home() && ! is_front_page() ) :
+						?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
+						<?php
+					endif;
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-			endwhile;
+						/*
+						* Include the Post-Type-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						*/
+						get_template_part( 'template-parts/content-blog', get_post_type() );
 
-			the_posts_navigation();
+					endwhile;
 
-		else :
+					the_posts_navigation();
 
-			get_template_part( 'template-parts/content', 'none' );
+				else :
 
-		endif;
-		?>
+					get_template_part( 'template-parts/content', 'none' );
 
-	</main><!-- #main -->
+				endif;
+				?>
 
-<?php
-get_sidebar();
-get_footer();
+				</main><!-- #main -->
+			</div><!-- #primary -->
+		</div>
+		<div id="blog-br"></div>
+
+		<div class="col-sm-3">
+		<?php get_sidebar(); ?>
+		</div>
+	</div>
+</div>
+<?php get_footer(); ?>
