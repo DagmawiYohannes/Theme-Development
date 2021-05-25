@@ -202,3 +202,15 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+/**
+ * Navbar navwalker additions.
+ */
+require get_template_directory() . '/inc/nav-walker.php';
+
+function moonsight_add_editor_styles() {
+    add_editor_style( '/assets/css/custom-editor-style.css' );
+}
+add_action( 'admin_init', 'moonsight_add_editor_styles' );
+
