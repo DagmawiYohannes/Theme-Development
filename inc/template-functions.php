@@ -22,6 +22,7 @@ function moonsight_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	
 	return $classes;
 }
 add_filter( 'body_class', 'moonsight_body_classes' );
