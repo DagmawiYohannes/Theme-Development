@@ -35,6 +35,7 @@ if ( ! function_exists( 'moonsight_posted_on' ) ) :
 	}
 endif;
 
+
 if ( ! function_exists( 'moonsight_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
