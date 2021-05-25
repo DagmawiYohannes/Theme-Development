@@ -114,6 +114,7 @@
     text-decoration: none;
     color: #00baff;
 }
+
 #main a:link:hover,
 #main a:visited:hover,
 #main a:active:hover{
@@ -180,6 +181,7 @@ main div form .search-field {
     font-size: 15px;
     border: groove;
 }
+
 #colophon #wp-calendar{
     color: #E27D60;   
 }
